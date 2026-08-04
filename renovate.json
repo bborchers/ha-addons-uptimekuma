@@ -4,5 +4,6 @@
   "timezone": "Europe/Berlin",
   "dependencyDashboard": true,
   "dependencyDashboardApproval": false,
+  "prCreation": "immediate",
   "semanticCommits": "enabled"
 }
