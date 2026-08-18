@@ -12,6 +12,16 @@
   "customManagers": [
     {
       "customType": "regex",
+      "managerFilePatterns": ["/(^|/)Dockerfile$/"],
+      "matchStrings": [
+        "ARG UPTIME_KUMA_VERSION=\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "louislam/uptime-kuma",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
+    },
+    {
+      "customType": "regex",
       "managerFilePatterns": ["/(^|/)build\\.yaml$/"],
       "matchStrings": [
         "ghcr\\.io/hassio-addons/base/(?<depName>[a-zA-Z0-9]+):(?<currentValue>[^\\s\"]+)"
@@ -21,6 +31,13 @@
     }
   ],
   "packageRules": [
+    {
+      "matchDatasources": ["github-releases"],
+      "matchPackageNames": ["louislam/uptime-kuma"],
+      "groupName": "Uptime Kuma",
+      "minimumReleaseAge": "3 days",
+      "semanticCommitType": "fix"
+    },
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["ghcr.io/hassio-addons/base/*"],
