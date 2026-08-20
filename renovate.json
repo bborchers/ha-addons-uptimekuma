@@ -7,6 +7,7 @@
   "dependencyDashboardApproval": false,
   "prCreation": "immediate",
   "semanticCommits": "enabled",
+  "semanticCommitType": "fix",
   "assignees": ["bborchers"],
   "gitAuthor": "Bjoern Borchers <bborchers@users.noreply.github.com>",
   "customManagers": [
@@ -35,15 +36,13 @@
       "matchDatasources": ["github-releases"],
       "matchPackageNames": ["louislam/uptime-kuma"],
       "groupName": "Uptime Kuma",
-      "minimumReleaseAge": "3 days",
-      "semanticCommitType": "fix"
+      "minimumReleaseAge": "3 days"
     },
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["ghcr.io/hassio-addons/base/*"],
       "groupName": "hassio-addons base image",
-      "minimumReleaseAge": "3 days",
-      "semanticCommitType": "fix"
+      "minimumReleaseAge": "3 days"
     },
     {
       "matchManagers": ["github-actions"],
